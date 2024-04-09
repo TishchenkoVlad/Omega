@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Omega</title>
+    <link rel="stylesheet" href="{% static 'shopapp/css/home.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrap-logo">
+      <a href="" class="logo">Омега-центр</a>
+    </div>
+    <nav>
+      <a href="">Главная</a>
+      <a href="">Цены</a>
+      <a href="">Услуги</a>
+      <a href="">Бухгалтера</a>
+      <a href="">Контакты</a>
+  </nav>
+</header>
+
+<table class="deck">
+    <h1>Услуги</h1>
+    <nav id="deki">
+        <div class="product-wrap">
+          <div class="product-item">
+            <img src="https://www.artofmtg.com/wp-content/uploads/2021/12/Bloodtithe-Harvester-Innistrad-Crimson-Vow-MtG-Art.jpg">
+            <div class="product-buttons">
+              <a href="" class="button">Чекнуть</a>
+            </div>
+          </div>
+
+          <div class="product-title">
+            <a href="">Rakdos Midrange</a>
+            <span class="product-price">Цвет: Чёрный, Красный</span>
+          </div>
+        </div>
+
+        <div class="product-wrap">
+          <div class="product-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAfAhPb_kmMpC7tdoLp-6Kmej0clMqLuYEog&usqp=CAU">
+            <div class="product-buttons">
+              <a href="" class="button">Чекнуть</a>
+            </div>
+          </div>
+          <div class="product-title">
+            <a href="">Grixis Midrange</a>
+            <span class="product-price">Цвет: Синий, Чёрный, Красный</span>
+          </div>
+        </div>
+
+        <div class="product-wrap">
+          <div class="product-item">
+            <img src="https://www.artofmtg.com/wp-content/uploads/2021/10/Wedding-Festivity-Innistrad-Crimson-Vow-MtG-Art.jpg">
+            <div class="product-buttons">
+              <a href="" class="button">Чекнуть</a>
+            </div>
+          </div>
+          <div class="product-title">
+            <a href="">Mono-White Midrang</a>
+            <span class="product-price">Цвет: Белый</span>
+          </div>
+        </div>
+
+        <div class="product-wrap">
+          <div class="product-item">
+            <img src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/5/54/Eiganjo.jpg/revision/latest?cb=20190627115638">
+            <div class="product-buttons">
+              <a href="" class="button">Чекнуть</a>
+            </div>
+          </div>
+          <div class="product-title">
+            <a href="">Jeskai Control</a>
+            <span class="product-price">Цвет: Белый, Синий, Красный</span>
+          </div>
+        </div>
+
+        <div class="product-wrap">
+          <div class="product-item">
+            <img src="https://www.artofmtg.com/wp-content/uploads/2021/12/Bloodtithe-Harvester-Innistrad-Crimson-Vow-MtG-Art.jpg">
+            <div class="product-buttons">
+              <a href="" class="button">Чекнуть</a>
+            </div>
+          </div>
+          <div class="product-title">
+            <a href="">Mardu Reanimator</a>
+            <span class="product-price">Цвет: Белый, Чёрный, Красный</span>
+          </div>
+        </div>
+    </nav>
+</table>
+
+
+<div id="calculator">
+    <h2>Организационно-правовая форма</h2>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>ИП</label>
+    </div>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>ООО</label>
+    </div>
+
+    <h2>Режим налогообложения</h2>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>УСН 6%</label>
+    </div>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>УСН 14%</label>
+    </div>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>Осн</label>
+    </div>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>Патент</label>
+    </div>
+
+    <div>
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <label>УСН+патент</label>
+    </div>
+
+    <div>
+        <label>Кол-во сотрудников</label>
+        <input class="sotr" type="number" id="ip" name="ip-ooo" checked="" onclick="">
+    </div>
+
+    <label for="pet-select">Система налогообложения:</label>
+
+    <select name="pets" id="pet-select">
+        <option value="">----</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+    </select>
+
+
+    <label for="hours">Часы работы:</label>
+    <input type="number" id="hours" min="0">
+    <label for="rate">Стоимость за час:</label>
+    <input type="number" id="rate" min="0">
+    <button onclick="calculate()">Рассчитать</button>
+    <h3 id="total"></h3>
+</div>
+
+<script>
+    function calculate() {
+        var hours = parseFloat(document.getElementById('hours').value);
+        var rate = parseFloat(document.getElementById('rate').value);
+
+        if (isNaN(hours) || isNaN(rate)) {
+            document.getElementById('total').textContent = "Пожалуйста, введите корректные значения.";
+        } else {
+            var total = hours * rate;
+            document.getElementById('total').textContent = "Общая стоимость: $" + total.toFixed(2);
+        }
+    }
+</script>
+
+</body>
+</html>
