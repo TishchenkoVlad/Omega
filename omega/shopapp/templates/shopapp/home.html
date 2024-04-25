@@ -11,6 +11,7 @@
     <title>Omega</title>
     <link rel="stylesheet" href="{% static 'shopapp/css/home.css' %}">
 </head>
+
 <body>
     <header>
     <div class="wrap-logo">
@@ -183,19 +184,22 @@
     <h3 id="total"></h3>
 </div>
 
-<script>
-    function calculate() {
-        var hours = parseFloat(document.getElementById('hours').value);
-        var rate = parseFloat(document.getElementById('rate').value);
+    <nav class="but_crl">
+        <a href="#" id="scroll_top">Наверх</a>
+    </nav>
 
-        if (isNaN(hours) || isNaN(rate)) {
-            document.getElementById('total').textContent = "Пожалуйста, введите корректные значения.";
-        } else {
-            var total = hours * rate;
-            document.getElementById('total').textContent = "Общая стоимость: $" + total.toFixed(2);
-        }
-    }
+
+    <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+	    $('#scroll_top').click(function(){
+		    $('html, body').animate({scrollTop: 0}, 600);
+		        return false;
+	           });
+    });
+
 </script>
+
 
 <footer>
     <nav>
