@@ -5,5 +5,13 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'shopapp/home.html')
 
+
+def result(request):
+    num1 = int(request.GET.get('number1'))
+    num2 = int(request.GET.get('number2'))
+    if request.GET.get('add') == "":
+        ans = num1 + num2
+    return render(request, 'shopapp/result.html', {'ans': ans})
+
 def about(request):
     return render(request, 'shopapp/about.html')

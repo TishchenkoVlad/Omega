@@ -120,6 +120,8 @@
 
 <h1>Калькулятор/Посчитай цену своей услуги</h1>
 <div id="calculator">
+    <form action="result">
+        {% csrf_token %}
     <p>Организационно-правовая форма</p>
 
     <div>
@@ -161,27 +163,26 @@
 
     <div>
         <label>Кол-во сотрудников</label>
-        <input class="sotr" type="number" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="sotr" type="number" id="ip" name="number1" checked="" onclick="">
     </div>
 
     <label for="pet-select">Система налогообложения:</label>
 
     <select name="pets" id="pet-select">
         <option value="">----</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
+        <option value="dog">Торговля(розничная)</option>
+        <option value="cat">Грузоперевозки</option>
+        <option value="hamster">Общепит</option>
+        <option value="parrot">Бытовые услуги</option>
     </select>
 
 
     <label for="hours">Часы работы:</label>
-    <input type="number" id="hours" min="0">
+    <input type="number" id="hours" min="0" name="number2">
 
-    <button onclick="calculate()">Рассчитать</button>
+    <button name="add">Рассчитать</button>
     <h3 id="total"></h3>
+    </form>
 </div>
 
     <nav class="but_crl">
