@@ -21,3 +21,6 @@ def home(request):
 
 def about(request):
     return render(request, 'shopapp/about.html')
+
+def prices(request):
+    return render(request, 'shopapp/Prices.html')
