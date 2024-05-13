@@ -12,6 +12,7 @@ def home(request):
     return render(request, 'shopapp/home.html', {'ans': ans})
 
 
+
 #def result(request):
 #    num1 = int(request.GET.get('number1'))
 #    num2 = int(request.GET.get('number2'))
