@@ -25,3 +25,9 @@ def about(request):
 
 def prices(request):
     return render(request, 'shopapp/Prices.html')
+
+def services(request):
+    return render(request, 'shopapp/services.html')
+
+def news(request):
+    return render(request, 'shopapp/news.html')
