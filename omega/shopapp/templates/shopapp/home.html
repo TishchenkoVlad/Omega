@@ -126,39 +126,39 @@
     <p>Организационно-правовая форма</p>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ippp" checked="" onclick="" value="1">
         <label>ИП</label>
     </div>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ippp" checked="" onclick="" value="2">
         <label>ООО</label>
     </div>
 
     <p>Режим налогообложения</p>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="1">
         <label>УСН 6%</label>
     </div>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="2">
         <label>УСН 14%</label>
     </div>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="3">
         <label>Осн</label>
     </div>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="4">
         <label>Патент</label>
     </div>
 
     <div>
-        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="">
+        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="5">
         <label>УСН+патент</label>
     </div>
 
@@ -169,17 +169,14 @@
 
     <label for="pet-select">Система налогообложения:</label>
 
-    <select name="pets" id="pet-select">
-        <option value="">----</option>
-        <option value="dog">Торговля(розничная)</option>
-        <option value="cat">Грузоперевозки</option>
-        <option value="hamster">Общепит</option>
-        <option value="parrot">Бытовые услуги</option>
+    <select name="variant" id="pet-select">
+        <option name="not" value="0">----</option>
+        <option name="onev" value="t1">Торговля(розничная)</option>
+        <option name="twov" value="t2">Грузоперевозки</option>
+        <option name="threev" value="t3">Общепит</option>
+        <option name="fourv" value="t4">Бытовые услуги</option>
     </select>
 
-
-    <label for="hours">Часы работы:</label>
-    <input type="number" id="hours" min="0" name="number2">
 
     <button name="add">Рассчитать</button>
     <h3 id="total">{{ans}}</h3>
