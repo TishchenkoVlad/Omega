@@ -19,9 +19,14 @@ from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import views
+
+from shopapp_rest.views import NewAPIView, Calculate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shopapp.urls')),
-    path('api/v1/', include('shopapp_rest.urls'))
+    path('api/v1/', include('shopapp_rest.urls')),
+    path('calculate/', Calculate.as_view()),
+    path('new/', NewAPIView.as_view())
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

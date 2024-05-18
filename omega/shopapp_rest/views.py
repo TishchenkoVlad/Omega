@@ -1,7 +1,10 @@
 import json
 
+from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from .models import New
+from .serializers import NewSerializer
 
 
 class Calculate(APIView):
@@ -47,3 +50,7 @@ class Calculate(APIView):
             "success": True,
             "data": ans
         })
+
+class NewAPIView(generics.ListAPIView):
+    queryset = New.objects.all()
+    serializer_class = NewSerializer
