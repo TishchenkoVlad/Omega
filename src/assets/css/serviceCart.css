@@ -1,0 +1,22 @@
+.product-us {
+    border-radius: 5%;
+    width: 220px;
+    height: 300px;
+    margin: 8px;
+    background: black;
+    padding: 8px 8px 1px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #EEEEEE;
+    margin-bottom: 10px;
+ }
+ 
+button.product-us{
+   color: slateblue;
+}
+
+ .product-titleus {
+    color: #2F2F2F;
+    margin-top: 20px;
+ }
+ 

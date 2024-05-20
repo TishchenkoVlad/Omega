@@ -1,0 +1,295 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'inter';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  }
+
+
+  /*header*/
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #00AE6F;
+    padding: 16px 150px 16px 150px;
+  }
+  
+  .wrap-logo {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  header a {
+    color: #fff;
+    padding: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    background-color: #008B53;
+    color: #fff;
+    border-radius: 25px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  header a.active {
+    background-color: #CE3D22;
+  }
+
+  
+
+
+  
+.search input[type=text] {
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    padding: 16px;
+}
+
+.search {
+    float: right;
+    margin: 7px;
+
+}
+
+
+/* --------------------------------------------------------------- */
+
+h1{
+margin-left: 150px;
+margin-top: 80px;
+
+}
+
+
+#kart{
+    margin-right: 100px;
+    margin-top: 52px;
+    margin-left: 200px;
+}
+.kart{            /*это нав*/
+display: flex;
+}
+
+
+#kartus{
+    margin-right: 150px;
+    margin-top: 52px;
+    margin-left: 150px;
+}
+.kartus{
+display: flex;
+}
+
+/* --------------------------------------------------------------- */
+
+#calculator {
+    width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+input[type="number"] {
+     width: 192px;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 50px;
+     box-sizing: border-box;
+}
+
+.btn {
+	display: inline-block;
+	box-sizing: border-box;
+	padding:  12px, 32px, 12px, 32px;
+	width: Hug 192px;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	height: 46px;
+	line-height: 46px;
+	font-size: 14px;
+	text-decoration: none;
+	color: #2F2F2F;
+	background-color: #FF4C00;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+	vertical-align: top;
+}
+
+pet-select{
+border-radius:50px;
+width: 192px;
+}
+
+button {
+    width: 192px;
+    padding: 10px;
+    background-color: #FF4C00;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #E01E1E;
+
+}
+
+
+
+/* --------------------------------------------------------------- */
+
+
+footer{
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  padding-left: 287px;
+  margin-top:200px;
+  top: auto;
+  background-color: #00AE68;
+  color: #fff;
+  font-size:16px;
+  align-items: center;
+
+}
+
+
+.foot-menu{
+  align-items: center;
+  width: 172px;
+  height: 196px;
+  left: 287px;
+  top: 3898px;
+  margin-top: 50px;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.bold{
+  color:#008B53;
+}
+
+
+.logo-f{
+  margin: 100px;
+  font-weight:800;
+  font-size:30px;
+  color:#FF4C2B;
+}
+
+.wrap li{
+
+  margin-right:10px;
+  margin-top:5px;
+  list-style-type: none; /* Убираем маркеры */
+ }
+
+ .wrap {
+  margin: 15px;
+  margin-right: 30px;
+  width: 400px;
+  display: flex;
+}
+
+
+footer a {
+color: #fff;
+padding: 10px;
+margin-left: 150px;
+padding-right: 16px;
+text-decoration: none;
+font-size: 16px;
+border-radius: 4px;
+}
+
+footer a:hover {
+background-color: #008000;
+color: #fff;
+border-radius: 25px;
+padding-left: 16px;
+padding-right: 16px;
+}
+
+footer a.active {
+background-color: #CE3D22;
+}
+
+
+/*footer
+
+
+/* --------------------------------------------------------------- */
+
+.but_crl {
+    font-size: 12px;
+	width: 600px;
+	margin: 0 auto;
+	position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:  #008B53;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 999; /* Чтобы кнопка была поверх других элементов */
+}
+
+.but_crl:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+    color: #fff;
+}
+
+#scroll_top {
+    font-size: 12px;
+    color: #fff;
+	font-weight: 900;
+
+}

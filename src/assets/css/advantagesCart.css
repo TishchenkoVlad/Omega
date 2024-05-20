@@ -1,0 +1,17 @@
+
+.product-wrap {
+    border-radius: 5%;
+    width: 258px;
+    height: 354px;
+    margin: 10px;
+    background: black;
+    padding: 16px 16px 32px;
+    text-align: center;
+    font-size: 16px;
+ 
+    background-color: #00AE6F;
+ }
+
+ .product-title {
+    color: #FFFFFF;
+ }

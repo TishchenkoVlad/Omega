@@ -1,0 +1,60 @@
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #00AE6F;
+    padding: 16px 150px 16px 150px;
+  }
+  
+  .wrap-logo {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  header a {
+    color: #fff;
+    padding: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    background-color: #008B53;
+    color: #fff;
+    border-radius: 25px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  header a.active {
+    background-color: #CE3D22;
+  }
+
+  
+
+
+  
+.search input[type=text] {
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    padding: 16px;
+}
+
+.search {
+    float: right;
+    margin: 7px;
+
+}
