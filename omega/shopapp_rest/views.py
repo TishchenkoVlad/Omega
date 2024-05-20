@@ -1,5 +1,6 @@
 import json
 
+from django.forms import model_to_dict
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -51,6 +52,18 @@ class Calculate(APIView):
             "data": ans
         })
 
-class NewAPIView(generics.ListAPIView):
-    queryset = New.objects.all()
-    serializer_class = NewSerializer
+#class NewAPIView(generics.ListAPIView):
+#    queryset = New.objects.all()
+#    serializer_class = NewSerializer
+
+class NewAPIView(APIView):
+    def get(self, request):
+        lst = New.objects.all().values()
+        return Response({"posts": list(lst)})
+
+    def post(self, request):
+        post_new = New.objects.create(
+            title=request.data['title'],
+            content=request.data['content']
+        )
+        return Response({"post": model_to_dict(post_new)})
