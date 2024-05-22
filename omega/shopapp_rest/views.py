@@ -58,12 +58,31 @@ class Calculate(APIView):
 
 class NewAPIView(APIView):
     def get(self, request):
-        lst = New.objects.all().values()
-        return Response({"posts": list(lst)})
+        new = New.objects.all()
+        return Response({"posts": NewSerializer(new, many=True).data})
 
     def post(self, request):
-        post_new = New.objects.create(
-            title=request.data['title'],
-            content=request.data['content']
-        )
-        return Response({"post": model_to_dict(post_new)})
+        serializer = NewSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        #post_new = New.objects.create(
+        #    title=request.data['title'],
+        #    content=request.data['content']
+        #)
+        return Response({"post": serializer.data})
+
+    # def put(self, request, *args, **kwargs):
+    #     pk = kwargs.get("pk", None)
+    #     if not pk:
+    #         return Response({"error": "Method PUT not allowed"})
+    #
+    #     try:
+    #         instance = New.objects.get(pk=pk)
+    #     except:
+    #         return Response({"error": "Objects does not exists"})
+    #
+    #     serializer = NewSerializer(data=request.data, instance=instance)
+    #     serializer.is_valid(raise_exception=True)
+    #     serializer.save()
+    #     return Response({"post": serializer.data})
