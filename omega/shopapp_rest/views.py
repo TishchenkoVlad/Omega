@@ -4,8 +4,8 @@ from django.forms import model_to_dict
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import New
-from .serializers import NewSerializer
+from .models import New, Services
+from .serializers import NewSerializer, SerSerializer
 
 
 class Calculate(APIView):
@@ -86,3 +86,16 @@ class NewAPIView(APIView):
     #     serializer.is_valid(raise_exception=True)
     #     serializer.save()
     #     return Response({"post": serializer.data})
+
+
+class SerAPIView(APIView):
+    def get(self, request):
+        ser = Services.objects.all()
+        return Response({"posts": SerSerializer(ser, many=True).data})
+
+    def post(self, request):
+        serializer = SerSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response({"post": serializer.data})

@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('calculate/', views.Calculate.as_view()),
-    path('new/', views.NewAPIView.as_view())
+    path('new/', views.NewAPIView.as_view()),
+    path('services/', views.SerAPIView.as_view())
 ]
