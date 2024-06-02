@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import New, Services
+from .models import New, Services, Feedback
 
 
 class NewModel:
@@ -46,3 +46,18 @@ class SerSerializer(serializers.ModelSerializer):
             instance.cat_id = validated_data.get("is_published", instance.is_published)
             instance.save()
             return instance
+
+
+
+class EvModel:
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
+
+class EvSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feedback
+        fields = ('title', 'content', 'is_published', 'ev_id')
+
+        def create(self, validated_data):
+            return Feedback.objects.create(**validated_data)

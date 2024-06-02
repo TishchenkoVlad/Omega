@@ -27,3 +27,20 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Feedback(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField(blank=True)
+    is_published = models.BooleanField(default=True)
+    ev = models.ForeignKey('Evaluation', on_delete=models.PROTECT, null=True)
+
+    def __str__(self):
+        return self.title
+
+class Evaluation(models.Model):
+    score = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.score

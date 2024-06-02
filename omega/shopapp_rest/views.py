@@ -4,8 +4,8 @@ from django.forms import model_to_dict
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import New, Services
-from .serializers import NewSerializer, SerSerializer
+from .models import New, Services, Feedback
+from .serializers import NewSerializer, SerSerializer, EvSerializer
 from rest_framework import filters
 
 
@@ -121,3 +121,15 @@ class SearchSer(generics.ListAPIView):
     serializer_class = SerSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['title', ]
+
+
+
+class FedAPIView(APIView):
+    def get(self, request):
+        new = Feedback.objects.all()
+        return Response({"posts": EvSerializer(new, many=True).data})
+
+    def post(self, request):
+        serializer = EvSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()

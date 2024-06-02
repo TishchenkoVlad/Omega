@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import New, Services
+from .models import New, Services, Feedback
 
 # Register your models here.
 admin.site.register(New)
 admin.site.register(Services)
+admin.site.register(Feedback)
