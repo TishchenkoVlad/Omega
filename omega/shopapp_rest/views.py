@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import New, Services
 from .serializers import NewSerializer, SerSerializer
+from rest_framework import filters
 
 
 class Calculate(APIView):
@@ -99,3 +100,24 @@ class SerAPIView(APIView):
         serializer.save()
 
         return Response({"post": serializer.data})
+
+
+class SearchNew(generics.ListAPIView):
+#    def get(self):
+#        queryset = New.objects.all()
+#        username = self.request.query_params.get('search')
+#        if username is not None:
+#            queryset = queryset.filter(title=username)
+#        return queryset
+
+    queryset = New.objects.all()
+    serializer_class = NewSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title',]
+
+
+class SearchSer(generics.ListAPIView):
+    queryset = Services.objects.all()
+    serializer_class = SerSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title', ]
