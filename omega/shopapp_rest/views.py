@@ -4,8 +4,8 @@ from django.forms import model_to_dict
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import New, Services, Feedback
-from .serializers import NewSerializer, SerSerializer, EvSerializer
+from .models import New, Services, Feedback, infohome
+from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer
 from rest_framework import filters
 
 
@@ -67,10 +67,6 @@ class NewAPIView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        #post_new = New.objects.create(
-        #    title=request.data['title'],
-        #    content=request.data['content']
-        #)
         return Response({"post": serializer.data})
 
     # def put(self, request, *args, **kwargs):
@@ -133,3 +129,16 @@ class FedAPIView(APIView):
         serializer = EvSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
+
+class InfohomeAPIView(APIView):
+    def get(self, request):
+        new = infohome.objects.all()
+        return Response({"posts": InfohomeSerializer(new, many=True).data})
+
+    def post(self, request):
+        serializer = InfohomeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response({"post": serializer.data})

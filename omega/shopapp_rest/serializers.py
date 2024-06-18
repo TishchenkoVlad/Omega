@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import New, Services, Feedback
+from .models import New, Services, Feedback, infohome, Application
 
 
 class NewModel:
@@ -61,3 +61,29 @@ class EvSerializer(serializers.ModelSerializer):
 
         def create(self, validated_data):
             return Feedback.objects.create(**validated_data)
+
+
+class InfohomeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = infohome
+        fields = ('icon', 'title', 'content', 'is_published',)
+
+        def create(self, validated_data):
+            return infohome.objects.create(**validated_data)
+
+        def update(self, instance, validated_data):
+            instance.icon = validated_data.get("icon", instance.icon)
+            instance.title = validated_data.get("title", instance.title)
+            instance.content = validated_data.get("content", instance.content)
+            instance.is_published = validated_data.get("is_published", instance.is_published)
+            instance.save()
+            return instance
+
+
+class ApplicationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Application
+        fields = ('name', 'email', 'number',)
+
+        def create(self, validated_data):
+            return Application.objects.create(**validated_data)

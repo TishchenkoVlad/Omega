@@ -44,3 +44,22 @@ class Evaluation(models.Model):
 
     def __str__(self):
         return self.score
+
+
+class infohome(models.Model):
+    icon = models.ImageField(upload_to='images/', blank=True)
+    title = models.CharField(max_length=255)
+    content = models.TextField(blank=True)
+    is_published = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Application(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    number = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
