@@ -1,4 +1,4 @@
-import advantagesCart from "../assets/css/advantagesCart.css"
+import "../assets/css/advantagesCart.css"
 
 function AdvantagesCart({children}) {
 

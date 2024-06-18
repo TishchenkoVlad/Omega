@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -8,12 +9,12 @@ function Header() {
               <a href="" class="logo">Омега-центр</a>
             </div>
             <nav>
-              <a href="">Главная</a>
-              <a href="{% url 'prices' %}">Цены</a>
-              <a href="{% url 'services' %}">Услуги</a>
-              <a href="{% url 'news' %}">Новости</a>
-              <a href="{% url 'about' %}">Контакты</a>
-              <a href="tel:+79606129717">+7 960 612 97 17</a>
+              <Link to="/">Главная</Link>
+              <Link to="/prices" >Цены</Link>
+              <Link to="/services" >Услуги</Link>
+              <Link to="/news" >Новости</Link>
+              <Link to="/about" >Контакты</Link>
+              <Link to="/" >+7 960 612 97 17</Link>
     
               <div class="search">
                   <form action="#">
