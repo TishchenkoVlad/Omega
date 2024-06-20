@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import Layout from "../components/Layout";
 import ServiceCart from "../components/ServiceCart";
 import AdvantagesCart from "../components/AdvantagesCart";
+import "../assets/css/main.css"
 
 function Main () {
     return (

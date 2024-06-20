@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../pages/Main';
 import Services from "../pages/Services";
 import Prices from "../pages/Prices";
+import News from "../pages/News";
+import About from "../pages/About";
 
 
 export const routes = [  //маршрутизация страниц. их объявление
@@ -16,6 +18,14 @@ export const routes = [  //маршрутизация страниц. их об�
     {
         path: '/prices',
         element: (<Prices />)
+    },
+    {
+        path: '/news',
+        element: (<News />)
+    },
+    {
+        path: '/about',
+        element: (<About />)
     },
 ]
 
