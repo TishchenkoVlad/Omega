@@ -6,212 +6,268 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.p {
+  margin-right: 150px;
+}
 
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-
   font-family: Arial, sans-serif;
 }
-
 
 nav {
   display: flex;
   align-items: center;
-  }
+}
 
+/*header*/
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #00ae6f;
+  padding: 16px 150px;
+}
 
-  /*header*/
+.wrap-logo {
+  display: flex;
+  align-items: center;
+}
 
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: #00AE6F;
-    padding: 16px 150px 16px 150px;
-  }
-  
-  .wrap-logo {
-    display: flex;
-    align-items: center;
-  
-  }
-  
-  header a {
-    color: #fff;
-    padding: 12px;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 4px;
-  }
-  
-  header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  header a:hover {
-    background-color: #008B53;
-    color: #fff;
-    border-radius: 25px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  
-  header a.active {
-    background-color: #CE3D22;
-  }
+header a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+}
 
-  
+header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
 
+header a:hover {
+  background-color: #008b53;
+  color: #fff;
+  border-radius: 25px;
+}
 
-  
-.search input[type=text] {
-    width: 300px;
-    height: 40px;
-    border-radius: 25px;
-    border: none;
-    padding: 16px;
+header a.active {
+  background-color: #ce3d22;
+}
+
+.search input[type="text"] {
+  width: 300px;
+  height: 40px;
+  border-radius: 25px;
+  border: none;
+  padding: 16px;
 }
 
 .search {
-    float: right;
-    margin: 7px;
-
+  float: right;
+  margin: 7px;
 }
 
-
-/* --------------------------------------------------------------- */
-
-h1{
-margin-left: 150px;
-margin-top: 80px;
-
+/* Основные стили для заголовков и контейнеров */
+h1 {
+  margin-left: 150px;
+  margin-top: 80px;
 }
 
-
-#kart{
-    margin-right: 100px;
-    margin-top: 52px;
-    margin-left: 200px;
-}
-.kart{            /*это нав*/
-display: flex;
+h2 {
+  margin-left: 150px;
+  margin-top: 80px;
 }
 
-
-#kartus{
-    margin-right: 150px;
-    margin-top: 52px;
-    margin-left: 150px;
-}
-.kartus{
-display: flex;
+#kart {
+  margin: 52px 100px 0 200px;
 }
 
-/* --------------------------------------------------------------- */
+.kart {
+  display: flex;
+}
+
+#kartus {
+  margin: 52px 150px 0 150px;
+}
+
+.kartus {
+  display: flex;
+}
 
 #calculator {
-    width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+  width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
 }
 
 input[type="number"] {
-     width: 192px;
-     padding: 10px;
-     margin-bottom: 10px;
-     border: 1px solid #ccc;
-     border-radius: 50px;
-     box-sizing: border-box;
+  width: 192px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-sizing: border-box;
 }
 
 .btn {
-	display: inline-block;
-	box-sizing: border-box;
-	padding:  12px, 32px, 12px, 32px;
-	width: Hug 192px;
-	outline: none;
-	border: 1px solid #fff;
-	border-radius: 50px;
-	height: 46px;
-	line-height: 46px;
-	font-size: 14px;
-	text-decoration: none;
-	color: #2F2F2F;
-	background-color: #FF4C00;
-	cursor: pointer;
-	user-select: none;
-	appearance: none;
-	touch-action: manipulation;
-	vertical-align: top;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 12px 32px;
+  width: 192px;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  height: 46px;
+  line-height: 46px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #2f2f2f;
+  background-color: #ff4c00;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  vertical-align: top;
 }
 
-pet-select{
-border-radius:50px;
-width: 192px;
+pet-select {
+  border-radius: 50px;
+  width: 192px;
 }
 
 button {
-    width: 192px;
-    padding: 10px;
-    background-color: #FF4C00;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+  width: 192px;
+  padding: 10px;
+  background-color: #ff4c00;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
 }
+
 button:hover {
-    background-color: #E01E1E;
-
+  background-color: #e01e1e;
 }
-
-
-
-/* --------------------------------------------------------------- */
-
-
-
-/* --------------------------------------------------------------- */
 
 .but_crl {
-    font-size: 12px;
-	width: 600px;
-	margin: 0 auto;
-	position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color:  #008B53;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    z-index: 999; /* Чтобы кнопка была поверх других элементов */
+  font-size: 12px;
+  width: 600px;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #008b53;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  z-index: 999;
 }
 
 .but_crl:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
-    color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 #scroll_top {
-    font-size: 12px;
-    color: #fff;
-	font-weight: 900;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 900;
+}
 
+/* Медиа-запросы для адаптивности */
+
+/* Стили для больших экранов */
+@media (min-width: 1024px) {
+  header {
+    padding: 16px 150px;
+  }
+
+  .search input[type="text"] {
+    width: 300px;
+  }
+
+  h1, h2 {
+    margin-left: 150px;
+    margin-top: 80px;
+  }
+
+  #calculator {
+    width: 1200px;
+  }
+}
+
+/* Стили для планшетов и небольших экранов */
+@media (max-width: 1023px) and (min-width: 768px) {
+  header {
+    padding: 16px 50px;
+  }
+
+  .search input[type="text"] {
+    width: 250px;
+  }
+
+  h1, h2 {
+    margin-left: 50px;
+    margin-top: 40px;
+  }
+
+  #calculator {
+    width: 90%;
+  }
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 20px;
+  }
+
+  .search {
+    float: none;
+    margin: 10px 0;
+  }
+
+  .search input[type="text"] {
+    width: 90%;
+  }
+
+  h1, h2 {
+    margin-left: 20px;
+    margin-top: 40px;
+    font-size: 1.5em;
+  }
+
+  #kart, #kartus {
+    margin: 20px;
+  }
+
+  #calculator {
+    width: 95%;
+    padding: 10px;
+  }
+
+  input[type="number"], button, .btn {
+    width: 100%;
+  }
 }

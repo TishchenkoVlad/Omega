@@ -6,26 +6,29 @@ html, body {
     width: 100%;
     height: 100%;
 }
-
+.container-с{
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
 
 
 .YMap {
-    max-width: 1000%;
-    margin-left: 150px;
-    margin-top: 50px;
-    margin-bottom: 200px;
+    
     min-width: 500px;
-    width: 100vw;
+    width: 100%;
+    min-height: 600px;
+    height: 100%;
 
 }
 
 
 #contacts{
-    margin-left: 150px;
+    
 }
 
 
 #map {
-    width: 400px;
-    height: 200px;
+    width: 4000px;
+    height: 2000px;
  }

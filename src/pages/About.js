@@ -4,29 +4,28 @@ import Layout from "../components/Layout";
 import "../assets/css/about.css"
 
 
-
-
-
 function About() {
 
 
     
     function MyMap() {
         return (
+             
             <div className="YMap">
                 <YMaps>
                     <Map defaultState={{ center: [46.849564, 40.312824], zoom: 9 }}>
                         <Placemark geometry={[46.849564, 40.312824]} />
                     </Map>
                 </YMaps>
-            </div>
+            </div>            
+            
         );
     }
    
 
     return (
         <Layout>
-            <div className="container">
+            <div className="container-с">
                 <h1>Контакты</h1>
                 <p id='contacts'>
                     Ростовская обл. г.Зерноград, ул. Ленина 35
@@ -36,6 +35,8 @@ function About() {
                     omega-center@yandex.ru
                 </p>
                 <MyMap />
+                
+
             </div>
         </Layout>
     );

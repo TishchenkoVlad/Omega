@@ -7,12 +7,16 @@
   
 body {
     position: relative;
-  margin: 0;    
-  font-family: Arial, sans-serif;
+    margin: 0;    
+    font-family: Arial, sans-serif;
+    margin-right: 150px;
+
 }
 
-
+.container{
+  margin-left: 150px;
+}
 
 h2{
-    margin-left: 150px;
+    
 }
