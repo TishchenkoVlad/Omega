@@ -4,8 +4,8 @@ from django.forms import model_to_dict
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import New, Services, Feedback, infohome
-from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer
+from .models import New, Services, Feedback, infohome, DateEmail
+from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer, AppemSerializer
 from rest_framework import filters
 
 
@@ -99,12 +99,6 @@ class SerAPIView(APIView):
 
 
 class SearchNew(generics.ListAPIView):
-#    def get(self):
-#        queryset = New.objects.all()
-#        username = self.request.query_params.get('search')
-#        if username is not None:
-#            queryset = queryset.filter(title=username)
-#        return queryset
 
     queryset = New.objects.all()
     serializer_class = NewSerializer
@@ -138,6 +132,18 @@ class InfohomeAPIView(APIView):
 
     def post(self, request):
         serializer = InfohomeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response({"post": serializer.data})
+
+class ApplicationAPIView(APIView):
+    def get(self, request):
+        new = DateEmail.objects.all()
+        return Response({"posts": AppemSerializer(new, many=True).data})
+
+    def post(self, request):
+        serializer = AppemSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 

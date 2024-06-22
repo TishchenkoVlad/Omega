@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import New, Services, Feedback, infohome, Application
+from .models import New, Services, Feedback, infohome, DateEmail
 
 
 class NewModel:
@@ -80,10 +80,10 @@ class InfohomeSerializer(serializers.ModelSerializer):
             return instance
 
 
-class ApplicationSerializer(serializers.ModelSerializer):
+class AppemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Application
-        fields = ('name', 'email', 'number',)
+        model = DateEmail
+        fields = ('fio', 'email', 'number',)
 
         def create(self, validated_data):
-            return Application.objects.create(**validated_data)
+            return DateEmail.objects.create(**validated_data)

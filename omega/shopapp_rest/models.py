@@ -56,10 +56,10 @@ class infohome(models.Model):
         return self.title
 
 
-class Application(models.Model):
-    name = models.CharField(max_length=255)
+class DateEmail(models.Model):
+    fio = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     number = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.title
+        return self.fio
