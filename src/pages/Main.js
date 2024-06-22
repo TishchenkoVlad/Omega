@@ -148,7 +148,7 @@ function Main () {
             </div>
 
             <nav class="but_crl">
-                <a href="#" id="scroll_top">Наверх</a>
+                <a  href="#" id="scroll_top">Наверх</a>
             </nav>
         </Layout>
     )
