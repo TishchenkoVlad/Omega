@@ -87,3 +87,10 @@ class AppemSerializer(serializers.ModelSerializer):
 
         def create(self, validated_data):
             return DateEmail.objects.create(**validated_data)
+
+
+
+
+class EmailSerializer(serializers.Serializer):
+    email = serializers.CharField(max_length=255)
+    number = serializers.CharField(max_length=255)

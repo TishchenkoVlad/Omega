@@ -51,3 +51,11 @@ def services(request):
 
 def news(request):
     return render(request, 'shopapp/news.html')
+
+
+def appget():
+    return None
+
+
+def students_detail():
+    return None

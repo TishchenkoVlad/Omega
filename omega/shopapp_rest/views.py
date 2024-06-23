@@ -1,16 +1,24 @@
 import json
+from smtplib import SMTP_SSL
 
 from django.forms import model_to_dict
 from rest_framework import generics
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import New, Services, Feedback, infohome, DateEmail
-from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer, AppemSerializer
+from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer, AppemSerializer, \
+    EmailSerializer
 from rest_framework import filters
+from django.core.mail import send_mail
+from django.conf import settings
 
 
-class Calculate(APIView):
-    def post(self, request):
+
+
+@api_view(['POST'])
+def calculate(request):
+    if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
         body_data = json.loads(body_unicode)
 
@@ -53,44 +61,31 @@ class Calculate(APIView):
             "data": ans
         })
 
-#class NewAPIView(generics.ListAPIView):
-#    queryset = New.objects.all()
-#    serializer_class = NewSerializer
 
-class NewAPIView(APIView):
-    def get(self, request):
+
+
+@api_view(['GET', 'POST'])
+def new(request):
+    if request.method == 'GET':
         new = New.objects.all()
         return Response({"posts": NewSerializer(new, many=True).data})
 
-    def post(self, request):
+    elif request.method == 'POST':
         serializer = NewSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
         return Response({"post": serializer.data})
 
-    # def put(self, request, *args, **kwargs):
-    #     pk = kwargs.get("pk", None)
-    #     if not pk:
-    #         return Response({"error": "Method PUT not allowed"})
-    #
-    #     try:
-    #         instance = New.objects.get(pk=pk)
-    #     except:
-    #         return Response({"error": "Objects does not exists"})
-    #
-    #     serializer = NewSerializer(data=request.data, instance=instance)
-    #     serializer.is_valid(raise_exception=True)
-    #     serializer.save()
-    #     return Response({"post": serializer.data})
 
 
-class SerAPIView(APIView):
-    def get(self, request):
+@api_view(['GET', 'POST'])
+def Ser(request):
+    if request.method == 'GET':
         ser = Services.objects.all()
         return Response({"posts": SerSerializer(ser, many=True).data})
 
-    def post(self, request):
+    elif request.method == 'POST':
         serializer = SerSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -114,37 +109,74 @@ class SearchSer(generics.ListAPIView):
 
 
 
-class FedAPIView(APIView):
-    def get(self, request):
+@api_view(['GET', 'POST'])
+def Fed(request):
+    if request.method == 'GET':
         new = Feedback.objects.all()
         return Response({"posts": EvSerializer(new, many=True).data})
 
-    def post(self, request):
+    elif request.method == 'POST':
         serializer = EvSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
 
-class InfohomeAPIView(APIView):
-    def get(self, request):
+@api_view(['GET', 'POST'])
+def Infohome(request):
+    if request.method == 'GET':
         new = infohome.objects.all()
         return Response({"posts": InfohomeSerializer(new, many=True).data})
 
-    def post(self, request):
+    elif request.method == 'POST':
         serializer = InfohomeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
         return Response({"post": serializer.data})
 
-class ApplicationAPIView(APIView):
-    def get(self, request):
+
+@api_view(['GET', 'POST'])
+def appget(request):
+    if request.method == 'GET':
         new = DateEmail.objects.all()
         return Response({"posts": AppemSerializer(new, many=True).data})
 
-    def post(self, request):
+    elif request.method == 'POST':
         serializer = AppemSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
         return Response({"post": serializer.data})
+
+
+
+
+#def send_custom_email(subject, message, recipient_list):
+#    email_from = settings.EMAIL_HOST_USER
+#    send_mail(subject, message, email_from, recipient_list)
+
+
+
+
+class SendEmailView(APIView):
+    def post(self, request):
+        serializer = EmailSerializer(data=request.data)
+        if serializer.is_valid():
+            receiver_email = "omegac3ntr@yandex.ru"
+            email = serializer.validated_data['email']
+            number = serializer.validated_data['number']
+
+
+            smtp_server = 'smtp.yandex.ru'
+            sender_email = 'omegac3ntr@yandex.ru'
+            password = 'hkfpxzpfxrowcbhs'
+
+            try:
+                with SMTP_SSL(smtp_server, 465) as server:
+                    server.login(sender_email, password)
+                    server.sendmail(sender_email, receiver_email, f'Subject: {email}\n\n{number}')
+                return Response({'message': 'Email sent successfully'})
+            except Exception as e:
+                return Response({'error': str(e)}, status=400)
+        else:
+            return Response(serializer.errors, status=400)
