@@ -3,7 +3,8 @@ import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 //import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import Layout from "../components/Layout";
 import "../assets/css/about.css"
-import Modal from '../components/Modal.js';
+import Modal from '../components/modal';
+
 
 function About() {
     
@@ -18,13 +19,13 @@ function About() {
             </div>      
         );
     }
-    
-    const [modalActive, setModalActive] = useState( true)
+
+    const [modalActive, setModalActive] = useState(true);
 
 
     return (
         <Layout><h1>Контакты</h1>
-            <div className="container-с">                
+            <div className="container-с">               
                 <p id='contacts'>
                     Ростовская обл. г.Зерноград, ул. Ленина 35</p>
                 <p id='contacts'>                    
@@ -33,10 +34,13 @@ function About() {
                     +7 960 612 97 17 </p>
                 <p id='contacts'> График работы  Пн-Пт: с 9:00 до 17:00</p>
                 <p id='contacts'> omega-center@yandex.ru  </p>
-                    <Modal active={modalActive} setActive={setModalActive} />
-                    <MyMap />
-                <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
+                    <MyMap /> 
+            
             </div>
+            
+            <Modal active={modalActive} setActive={setModalActive} />
+            
+            <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
         </Layout>
     );
 };

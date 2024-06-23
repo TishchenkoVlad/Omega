@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Search from "./pyk/Search";
 
 
 function Header() {
@@ -18,7 +19,8 @@ function Header() {
     
               <div class="search">
                   <form action="#">
-                      <input type="text" placeholder="Поиск..." name="search" />
+                      
+                      <Search />
                   </form>
               </div>
           </nav>

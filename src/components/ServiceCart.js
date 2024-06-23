@@ -1,6 +1,8 @@
 import "../assets/css/serviceCart.css"
 import Button from "../components/Button";
-import Modal from 'Modal.js';
+
+import React, { useState } from 'react';
+import Modal from "./modal";
 
 
 function ServiceCart({ title, content, price }) {
