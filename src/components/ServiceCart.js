@@ -1,8 +1,10 @@
 import "../assets/css/serviceCart.css"
 import Button from "../components/Button";
+import Modal from 'Modal.js';
 
 
 function ServiceCart({ title, content, price }) {
+    const [modalActive, setModalActive] = useState( true)
 
     return (
         <div class="product-us">
@@ -14,9 +16,7 @@ function ServiceCart({ title, content, price }) {
             <div className="product-form">
                 <p className="price">{price}</p>
 
-                <Button>
-                    Оставить заявку
-                </Button>
+                <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
             </div>
         </div>
     )

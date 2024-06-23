@@ -1,0 +1,26 @@
+
+.modal{
+    height: 560px;
+    width: 610px;
+    position: fixed;
+    background-color:burlywood;
+    opacity: 80%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+}
+
+.modal.active{
+    transform: scale(1);
+}
+
+.modal-c{
+    padding: 20px;
+    border-radius: 12px;
+    background-color: aliceblue;
+    height: 350px;
+    width: 560px;
+}

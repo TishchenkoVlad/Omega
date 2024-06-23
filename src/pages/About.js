@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 //import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import Layout from "../components/Layout";
 import "../assets/css/about.css"
-
+import Modal from '../components/Modal.js';
 
 function About() {
     
-
     function MyMap() {
         return (             
             <div className="YMap">
@@ -19,7 +18,10 @@ function About() {
             </div>      
         );
     }
-        
+    
+    const [modalActive, setModalActive] = useState( true)
+
+
     return (
         <Layout><h1>Контакты</h1>
             <div className="container-с">                
@@ -31,8 +33,9 @@ function About() {
                     +7 960 612 97 17 </p>
                 <p id='contacts'> График работы  Пн-Пт: с 9:00 до 17:00</p>
                 <p id='contacts'> omega-center@yandex.ru  </p>
-                    
+                    <Modal active={modalActive} setActive={setModalActive} />
                     <MyMap />
+                <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
             </div>
         </Layout>
     );
