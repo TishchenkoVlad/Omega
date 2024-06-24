@@ -12,7 +12,6 @@ from rest_framework import filters
 
 
 
-
 @api_view(['POST'])
 @cache_page(60)
 def calculate(request):
