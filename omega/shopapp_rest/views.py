@@ -2,14 +2,15 @@ import json
 from smtplib import SMTP_SSL
 
 from django.forms import model_to_dict
+from django.views.decorators.cache import cache_page
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import New, Services, Feedback, infohome, DateEmail
-from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer, AppemSerializer, \
-    EmailSerializer
+from .models import New, Services, Feedback, infohome
+from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer, EmailSerializer
 from rest_framework import filters
+
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -17,6 +18,7 @@ from django.conf import settings
 
 
 @api_view(['POST'])
+@cache_page(60)
 def calculate(request):
     if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
@@ -65,6 +67,7 @@ def calculate(request):
 
 
 @api_view(['GET', 'POST'])
+@cache_page(60)
 def new(request):
     if request.method == 'GET':
         new = New.objects.all()
@@ -80,6 +83,7 @@ def new(request):
 
 
 @api_view(['GET', 'POST'])
+@cache_page(60)
 def Ser(request):
     if request.method == 'GET':
         ser = Services.objects.all()
@@ -110,6 +114,7 @@ class SearchSer(generics.ListAPIView):
 
 
 @api_view(['GET', 'POST'])
+@cache_page(60)
 def Fed(request):
     if request.method == 'GET':
         new = Feedback.objects.all()
@@ -122,6 +127,7 @@ def Fed(request):
 
 
 @api_view(['GET', 'POST'])
+@cache_page(60)
 def Infohome(request):
     if request.method == 'GET':
         new = infohome.objects.all()
@@ -135,18 +141,7 @@ def Infohome(request):
         return Response({"post": serializer.data})
 
 
-@api_view(['GET', 'POST'])
-def appget(request):
-    if request.method == 'GET':
-        new = DateEmail.objects.all()
-        return Response({"posts": AppemSerializer(new, many=True).data})
 
-    elif request.method == 'POST':
-        serializer = AppemSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-
-        return Response({"post": serializer.data})
 
 
 
@@ -158,8 +153,11 @@ def appget(request):
 
 
 
-class SendEmailView(APIView):
-    def post(self, request):
+
+@api_view(['POST'])
+@cache_page(60)
+def SendEmail(request):
+    if request.method == 'POST':
         serializer = EmailSerializer(data=request.data)
         if serializer.is_valid():
             receiver_email = "omegac3ntr@yandex.ru"

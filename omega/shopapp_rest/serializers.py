@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import New, Services, Feedback, infohome, DateEmail
+from .models import New, Services, Feedback, infohome
 
 
 class NewModel:
@@ -80,17 +80,18 @@ class InfohomeSerializer(serializers.ModelSerializer):
             return instance
 
 
-class AppemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DateEmail
-        fields = ('fio', 'email', 'number',)
-
-        def create(self, validated_data):
-            return DateEmail.objects.create(**validated_data)
-
-
 
 
 class EmailSerializer(serializers.Serializer):
     email = serializers.CharField(max_length=255)
     number = serializers.CharField(max_length=255)
+
+    def validate_email(self, value):
+        if not "@" in value:
+            raise serializers.ValidationError("Некорректный формат email")
+        return value
+
+    def validate_number(self, value):
+        if not value.isdigit():
+            raise serializers.ValidationError("Поле должно содержать только номер телефона")
+        return value
