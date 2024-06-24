@@ -1,15 +1,10 @@
-import "../assets/css/modal.css"
-import '../assets/css/modal.css'; // Добавьте стили для модалки
-
-import React, { useState } from 'react';
-
+import "../assets/css/modal.css";
+import { useState } from 'react';
 
 const Modal = ({ active, setActive }) => {
     const [formData, setFormData] = useState({
-        
         email: '',
         phone: '',
-        
     });
 
     const handleChange = (event) => {
@@ -22,20 +17,23 @@ const Modal = ({ active, setActive }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Обработка данных формы
+        // Логика валидации может быть добавлена здесь перед отправкой
         console.log('Форма отправлена', formData);
-        setActive(false); // Закрытие модального окна после отправки формы
+        // Опционально: Сбросить поля формы после отправки
+        setFormData({
+            email: '',
+            phone: '',
+        });
+        setActive(false); // Закрыть модальное окно после отправки
     };
 
     return (
         <div className={`modal ${active ? 'active' : ''}`} onClick={() => setActive(false)}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <span className="close-btn" onClick={() => setActive(false)}>&times;</span>
-                <h2>Оставить заявку</h2>
+                <p className="modal-title">Оставить заявку</p>
                 <form onSubmit={handleSubmit}>
-                    
                     <div className="form-group">
-                        <label htmlFor="email">Email:</label>
                         <input
                             type="email"
                             id="email"
@@ -43,10 +41,10 @@ const Modal = ({ active, setActive }) => {
                             value={formData.email}
                             onChange={handleChange}
                             required
+                            placeholder="Email"
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="phone">Телефон:</label>
                         <input
                             type="tel"
                             id="phone"
@@ -54,9 +52,9 @@ const Modal = ({ active, setActive }) => {
                             value={formData.phone}
                             onChange={handleChange}
                             required
+                            placeholder="Телефон"
                         />
                     </div>
-                    
                     <button type="submit">Оставить заявку</button>
                 </form>
             </div>
@@ -64,6 +62,4 @@ const Modal = ({ active, setActive }) => {
     );
 };
 
-
 export default Modal;
-

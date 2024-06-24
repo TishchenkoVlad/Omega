@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 //import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import Layout from "../components/Layout";
 import "../assets/css/about.css"
 import Modal from '../components/modal';
-
+import React, { useState } from 'react';
 
 function About() {
     
@@ -20,7 +20,7 @@ function About() {
         );
     }
 
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
 
 
     return (

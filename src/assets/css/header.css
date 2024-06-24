@@ -55,3 +55,9 @@ header {
     margin: 7px;
 
 }
+
+.btn-search{
+  background-color: #fff;
+  width: 24px;
+  height: 24px;
+}

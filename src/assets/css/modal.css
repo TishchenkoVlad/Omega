@@ -57,7 +57,7 @@ label {
 input,
 textarea {
     width: 100%;
-    padding: 8px;
+    padding: 8px 16px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -76,4 +76,10 @@ button {
 
 button:hover {
     background-color: #e01e1e;
+}
+
+.za{
+    font-size: 24px;
+    font-style: bold ;
+    align-self: center;
 }

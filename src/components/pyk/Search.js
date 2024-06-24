@@ -19,7 +19,6 @@ function Search() {
                 onChange={(e) => setQuery(e.target.value)} 
                 placeholder="Введите запрос" 
             />
-            <button onClick={handleSearch} >Поиск</button>
             <ul>
                 {results.map((item) => (
                     <li key={item.id}>{item.name}: {item.description}</li>

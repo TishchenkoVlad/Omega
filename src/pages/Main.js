@@ -3,8 +3,16 @@ import Layout from "../components/Layout";
 import ServiceCart from "../components/ServiceCart";
 import AdvantagesCart from "../components/AdvantagesCart";
 import "../assets/css/main.css"
+import Modal from '../components/modal';
+import React, { useState } from 'react';
+
+
 
 function Main () {
+
+    const [modalActive, setModalActive] = useState(true);
+
+
     return (
         <Layout>
             <table class="kart">
@@ -138,7 +146,7 @@ function Main () {
                         <option name="fourv" value="t4">Бытовые услуги</option>
                     </select>
 
-
+                    
                     <button name="add">Рассчитать</button>
                     <h3 id="total"></h3>
                 </form>

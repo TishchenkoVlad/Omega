@@ -105,12 +105,6 @@ h2 {
   display: flex;
 }
 
-#calculator {
-  width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-}
 
 input[type="number"] {
   width: 192px;
@@ -270,4 +264,78 @@ button:hover {
   input[type="number"], button, .btn {
     width: 100%;
   }
+}
+
+
+/*----------------------------------------------------------------------------------------------*/
+
+#calculator {
+  
+  margin: 50px auto;
+  padding: 32px;
+  border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+}
+
+#calculator p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > div {
+    margin-bottom: 2px;
+}
+
+.check-radio-btn {
+    margin-right: 10px;
+}
+
+label {
+    cursor: pointer;
+}
+
+.sotr {
+    width: 60px;
+    padding: 5px;
+}
+
+#pet-select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button[name="add"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[name="add"]:hover {
+    background-color: #45a049;
+}
+
+#total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }
