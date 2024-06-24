@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import ServiceCart from "../components/ServiceCart";
 import AdvantagesCart from "../components/AdvantagesCart";
 import "../assets/css/main.css"
-import Modal from '../components/modal';
+import Modal from '../components/Modal';
 import React, { useState } from 'react';
 
 
