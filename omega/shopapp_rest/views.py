@@ -6,13 +6,9 @@ from django.views.decorators.cache import cache_page
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from .models import New, Services, Feedback, infohome
 from .serializers import NewSerializer, SerSerializer, EvSerializer, InfohomeSerializer, EmailSerializer
 from rest_framework import filters
-
-from django.core.mail import send_mail
-from django.conf import settings
 
 
 
