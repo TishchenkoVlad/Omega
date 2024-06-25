@@ -5,6 +5,8 @@ import Layout from "../components/Layout";
 import "../assets/css/about.css"
 import Modal from '../components/Modal';
 import React, { useState } from 'react';
+import ButCrl from '../components/pyk/ButCrl';
+import FeedBack from '../components/pyk/FeedBack';
 
 function About() {
     
@@ -24,8 +26,17 @@ function About() {
                 <MyMap />
                 
             </div>
+            <div className="feedback-container">
+                <FeedBack />
+            </div>
+            
+            
             <Modal active={modalActive} setActive={setModalActive} />
             <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
+           
+           
+           
+            <ButCrl />
         </Layout>
     );
 };

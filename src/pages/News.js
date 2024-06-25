@@ -3,6 +3,9 @@ import axios from 'axios';
 import Layout from '../components/Layout';
 import Card from '../components/pyk/News'; // Убедитесь, что этот путь правильный
 
+import ButCrl from '../components/pyk/ButCrl';
+
+
 const News = () => {
   const [cardsData, setCardsData] = useState(null);
 
@@ -17,7 +20,9 @@ const News = () => {
 
   useEffect(() => {
     fetchCardData();
-  }, []); // Зависимость пустая, чтобы функция вызывалась только один раз при монтировании
+  }, []); 
+  
+  // Зависимость пустая, чтобы функция вызывалась только один раз при монтировании
 
   if (!cardsData) {
     return <div>Loading...</div>; // Пока данные загружаются, показываем сообщение о загрузке
@@ -31,6 +36,8 @@ const News = () => {
           <Card key={card.id} cardData={card} />
         ))}
       </div>
+      
+      <ButCrl />
     </Layout>
   );
 };

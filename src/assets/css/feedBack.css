@@ -1,0 +1,62 @@
+/* styles.css */
+
+/* Основной контейнер формы отзыва */
+.feedback-container {
+    max-width: 600px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Рамка контейнера */
+    border-radius: 5px; /* Скругление углов */
+    background-color: #f9f9f9; /* Фон контейнера */
+}
+
+/* Стили для заголовка формы */
+.feedback-container h2 {
+    font-size: 1.5rem; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Стили для формы отзыва */
+.feedback-container form {
+    display: flex; /* Отображение элементов в столбец */
+    flex-direction: column; /* Расположение элементов в столбец */
+}
+
+/* Стили для меток полей ввода */
+.feedback-container label {
+    margin-bottom: 5px; /* Отступ снизу */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Общие стили для полей ввода (input, textarea, select) */
+.feedback-container input,
+.feedback-container textarea,
+.feedback-container select {
+    padding: 8px; /* Внутренние отступы */
+    margin-bottom: 10px; /* Отступ снизу */
+    border: 1px solid #ccc; /* Рамка полей ввода */
+    border-radius: 3px; /* Скругление углов */
+    font-size: 1rem; /* Размер шрифта */
+}
+
+/* Стили для кнопки отправки отзыва */
+.feedback-container button {
+    padding: 10px; /* Внутренние отступы */
+    background-color: #007bff; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 3px; /* Скругление углов */
+    cursor: pointer; /* Индикатор курсора */
+    font-size: 1rem; /* Размер шрифта */
+}
+
+/* Стили для состояния кнопки при наведении */
+.feedback-container button:hover {
+    background-color: #0056b3; /* Изменение цвета фона при наведении */
+}
+
+/* Стили для отключенного состояния кнопки */
+.feedback-container button:disabled {
+    background-color: #ccc; /* Цвет фона для отключенной кнопки */
+    cursor: not-allowed; /* Курсор в режиме "не допускается" */
+}

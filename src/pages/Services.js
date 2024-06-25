@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import ServiceCart from "../components/ServiceCart";
 
+import ButCrl from '../components/pyk/ButCrl';
 
 function Services () {
     return (
@@ -139,6 +140,9 @@ function Services () {
                     
                 </nav>
             </table>
+
+            
+            <ButCrl />
         </Layout>
     )
 }

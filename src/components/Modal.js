@@ -1,10 +1,11 @@
 import "../assets/css/modal.css";
 import { useState } from 'react';
+import axios from 'axios';
 
 const Modal = ({ active, setActive }) => {
     const [formData, setFormData] = useState({
         email: '',
-        phone: '',
+        number: '',
     });
 
     const handleChange = (event) => {
@@ -14,15 +15,22 @@ const Modal = ({ active, setActive }) => {
             [name]: value
         });
     };
-
     const handleSubmit = (event) => {
         event.preventDefault();
+        
+    axios.post(
+        'https://api.omega-centre.ru/api/v1/send-email/',
+        {
+            email: formData.email,
+            number: formData.number,
+        }
+      );
         // Логика валидации может быть добавлена здесь перед отправкой
         console.log('Форма отправлена', formData);
         // Опционально: Сбросить поля формы после отправки
         setFormData({
             email: '',
-            phone: '',
+            number: '',
         });
         setActive(false); // Закрыть модальное окно после отправки
     };
@@ -47,9 +55,9 @@ const Modal = ({ active, setActive }) => {
                     <div className="form-group">
                         <input
                             type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
+                            id="number"
+                            name="number"
+                            value={formData.number}
                             onChange={handleChange}
                             required
                             placeholder="Телефон"

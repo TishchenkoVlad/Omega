@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Layout from "../components/Layout";
+import ButCrl from '../components/pyk/ButCrl';
 import ServiceCart from "../components/ServiceCart";
 import AdvantagesCart from "../components/AdvantagesCart";
 import "../assets/css/main.css"
@@ -155,9 +156,7 @@ function Main () {
                 </Button>
             </div>
 
-            <nav class="but_crl">
-                <a  href="#" id="scroll_top">Наверх</a>
-            </nav>
+            <ButCrl />
         </Layout>
     )
 }

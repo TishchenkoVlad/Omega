@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import "../assets/css/prices.css"
 
+import ButCrl from '../components/pyk/ButCrl';
 
 function Prices () {
     return (
@@ -101,6 +102,8 @@ function Prices () {
 
             </div>
         </body>
+        
+        <ButCrl />
         </Layout>
         
     )
