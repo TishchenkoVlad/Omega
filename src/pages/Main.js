@@ -6,7 +6,7 @@ import AdvantagesCart from "../components/AdvantagesCart";
 import "../assets/css/main.css"
 import Modal from '../components/Modal';
 import React, { useState } from 'react';
-
+import Calculator from "../components/Calculator";
 
 
 function Main () {
@@ -89,73 +89,7 @@ function Main () {
 
             <h1>Посчитай цену своей услуги</h1>
            
-            <div id="calculator">
-            <p>Калькулятор</p>
-                <form action="">
-                    <p>Организационно-правовая форма</p>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ippp" checked="" onclick="" value="1"/>
-                        <label>ИП</label>
-                    </div>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ippp" checked="" onclick="" value="2"/>
-                        <label>ООО</label>
-                    </div>
-
-                    <p>Режим налогообложения</p>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="1"/>
-                        <label>УСН 6%</label>
-                    </div>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="2"/>
-                        <label>УСН 14%</label>
-                    </div>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="3"/>
-                        <label>Осн</label>
-                    </div>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="4"/>
-                        <label>Патент</label>
-                    </div>
-
-                    <div>
-                        <input class="check-radio-btn" type="radio" id="ip" name="ip-ooo" checked="" onclick="" value="5"/>
-                        <label>УСН+патент</label>
-                    </div>
-
-                    <div>
-                        <label>Кол-во сотрудников</label>
-                        <input class="sotr" type="number" id="ip" name="number1" checked="" onclick=""/>
-                    </div>
-
-                    <label for="pet-select">Система налогообложения:</label>
-
-                    <select name="variant" id="pet-select">
-                        <option name="not" value="0">----</option>
-                        <option name="onev" value="t1">Торговля(розничная)</option>
-                        <option name="twov" value="t2">Грузоперевозки</option>
-                        <option name="threev" value="t3">Общепит</option>
-                        <option name="fourv" value="t4">Бытовые услуги</option>
-                    </select>
-
-                    
-                    <button name="add">Рассчитать</button>
-                    <h3 id="total"></h3>
-                </form>
-                <Modal active={modalActive} setActive={setModalActive} />
-                    <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
-           
-           
-            </div>
-
+            <Calculator />
             <ButCrl />
         </Layout>
     )

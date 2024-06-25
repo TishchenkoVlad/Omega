@@ -1,16 +1,22 @@
-
 import React, { useState } from 'react';
 import axios from 'axios'; // Подключаем axios для HTTP запросов
 import '../../assets/css/feedBack.css';
-
 
 const FeedBack = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [score, setScore] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        
+        // Валидация полей
+        if (!title.trim() || !content.trim()) {
+            setMessage('Пожалуйста, заполните все поля.');
+            return;
+        }
+
         try {
             const response = await axios.post('https://api.example.com/feedbacks/', {
                 title,
@@ -18,16 +24,21 @@ const FeedBack = () => {
                 score,
             });
             console.log('Отзыв успешно отправлен!', response.data);
-            // Дополнительная обработка успешной отправки, например, обновление списка отзывов
+            setMessage('Отзыв успешно отправлен!'); // Уведомление об успешной отправке
+            // Сброс полей формы после успешной отправки
+            setTitle('');
+            setContent('');
+            setScore('');
         } catch (error) {
             console.error('Ошибка при отправке отзыва:', error);
-            // Обработка ошибок при отправке отзыва
+            setMessage('Ошибка при отправке отзыва. Попробуйте снова.'); // Сообщение об ошибке
         }
     };
 
     return (
         <div>
             <h2>Оставить отзыв</h2>
+            {message && <p>{message}</p>} {/* Отображение сообщения */}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Скажите оценку:</label>
@@ -44,7 +55,8 @@ const FeedBack = () => {
                     <textarea 
                         value={content} 
                         onChange={(e) => setContent(e.target.value)} 
-                        placeholder='Текст отзыва:'
+                        placeholder='Текст отзыва:' 
+                        required
                     />
                 </div>
                 <div>
@@ -63,7 +75,5 @@ const FeedBack = () => {
         </div>
     );
 }
-  
-  export default FeedBack;
 
-
+export default FeedBack;
