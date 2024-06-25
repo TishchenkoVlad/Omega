@@ -30,10 +30,6 @@ function About() {
                 <FeedBack />
             </div>
             
-            
-            <Modal active={modalActive} setActive={setModalActive} />
-            <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
-           
            
            
             <ButCrl />

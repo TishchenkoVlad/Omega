@@ -12,19 +12,22 @@
 
 /* Стили для заголовка формы */
 .feedback-container h2 {
+    margin-left: 180px;
     font-size: 1.5rem; /* Размер шрифта заголовка */
     margin-bottom: 10px; /* Отступ снизу */
 }
 
 /* Стили для формы отзыва */
 .feedback-container form {
+    padding: 12px;
+    margin: 12px;
     display: flex; /* Отображение элементов в столбец */
     flex-direction: column; /* Расположение элементов в столбец */
 }
 
 /* Стили для меток полей ввода */
 .feedback-container label {
-    margin-bottom: 5px; /* Отступ снизу */
+    margin-bottom: 8px; /* Отступ снизу */
     font-weight: bold; /* Жирный шрифт */
 }
 
@@ -32,10 +35,10 @@
 .feedback-container input,
 .feedback-container textarea,
 .feedback-container select {
-    padding: 8px; /* Внутренние отступы */
+    padding: 12px 20px; /* Внутренние отступы */
     margin-bottom: 10px; /* Отступ снизу */
     border: 1px solid #ccc; /* Рамка полей ввода */
-    border-radius: 3px; /* Скругление углов */
+    border-radius: 50px; /* Скругление углов */
     font-size: 1rem; /* Размер шрифта */
 }
 
@@ -45,7 +48,7 @@
     background-color: #007bff; /* Цвет фона */
     color: white; /* Цвет текста */
     border: none; /* Без рамки */
-    border-radius: 3px; /* Скругление углов */
+    border-radius: 50px; /* Скругление углов */
     cursor: pointer; /* Индикатор курсора */
     font-size: 1rem; /* Размер шрифта */
 }

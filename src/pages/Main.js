@@ -41,9 +41,8 @@ function Main () {
                     </AdvantagesCart>
 
                     <AdvantagesCart>
-                        <h3>Опыт работы больше 10 лет</h3>
-                        <p>У нас работают первоклассные специалисты, которые продолжают повышать свой уровень несмотря на
-                                большой багаж знаний и опыта</p>
+                        <h3>Без рисков</h3>
+                        <p>Если бухгалтер заболеет или уйдёт в отпуск на выполнении обязательств это не отобразиться</p>
                     </AdvantagesCart>
                    
                 </nav>
@@ -151,9 +150,10 @@ function Main () {
                     <button name="add">Рассчитать</button>
                     <h3 id="total"></h3>
                 </form>
-                <Button>
-                    Оставить заявку
-                </Button>
+                <Modal active={modalActive} setActive={setModalActive} />
+                    <button className='open-btn' onClick={() => setModalActive(true)}>Оставить заявку</button>
+           
+           
             </div>
 
             <ButCrl />
